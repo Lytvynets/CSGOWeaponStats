@@ -8,13 +8,93 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+  static var shared = ViewController()
+    
+    @IBOutlet weak var idTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var kilsLabel: UILabel!
+    @IBOutlet weak var imageWeapon: UIImageView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var okButton: UIButton!
+    @IBOutlet weak var shotFired: UILabel!
+    @IBOutlet weak var shotHit: UILabel!
+    
+    var idSteam: String?
+   // var indexWeapon: Int?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        idTextField.delegate = self
+        textField.delegate = self
     }
-
-
+    
+   func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+       self.view.endEditing(true)
+       return false
+   }
+    
+    
+    func getRequst(withSteamId steamId: String, forIndex index: Int, complitionHandler:@escaping (StatsCS) -> Void){
+        let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=a216fc00-32ca-4827-ad36-2725ca0831da"
+        
+        guard let url = URL(string: urlString) else { return }
+        
+        let session = URLSession(configuration: .default)
+        session.dataTask(with: url) { (data, response, error) in
+            if let data = data{
+                
+                if let statsCS = self.parseJson(forIndex: index, withData: data){
+                    complitionHandler(statsCS)
+                }
+            }
+        }.resume()
+    }
+    
+    
+    func parseJson(forIndex index: Int,  withData data: Data) -> StatsCS? {
+        let decoder = JSONDecoder()
+        
+        do {
+            let statsCSData = try decoder.decode(ModelCS.self, from: data)
+            guard let statsCS = StatsCS(CSGOStats: statsCSData, index: index) else { return nil }
+            return statsCS
+            
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    
+    
+    
+    @IBAction func Button(_ sender: UIButton) {
+        
+       // indexWeapon = Int(textField.text ?? "")
+        idSteam = idTextField.text
+        
+        getRequst(withSteamId: idSteam ?? "", forIndex: indexRow ){StatsCS in
+            let image = StatsCS.imageURL
+            guard let imageUrl = URL(string: image) else { return }
+            let urrlSession = URLSession.shared
+            
+            urrlSession.dataTask(with: imageUrl) { (data, response, error) in
+                if let data = data, let image = UIImage(data: data){
+                    DispatchQueue.main.async {
+                        self.imageWeapon.image = image
+                    }
+                }
+            }.resume()
+            
+            DispatchQueue.main.async {
+                self.nameLabel.text = StatsCS.name
+                self.kilsLabel.text = String(StatsCS.value)
+                self.imageWeapon.image = UIImage(contentsOfFile: image)
+                self.shotFired.text = String(StatsCS.shotsFired)
+                self.shotHit.text = String(StatsCS.shotsHit)
+            }
+        }
+    }
 }
-
