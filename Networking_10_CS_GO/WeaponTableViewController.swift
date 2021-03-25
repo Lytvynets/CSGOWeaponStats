@@ -9,10 +9,17 @@
 import UIKit
 var indexRow = 0
 class WeaponTableViewController: UITableViewController {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.backgroundColor = .black
         
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexRow = indexPath.row
         print(indexRow)
         dismiss(animated: true, completion: nil)
-    }    
+        
+    }
 }
