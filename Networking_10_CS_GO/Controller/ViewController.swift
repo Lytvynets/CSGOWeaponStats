@@ -9,10 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
-    
-    var idSteam: String?
-    var textId: String?
-    
+    //MARK: - Outlets
     @IBOutlet weak var pickWeaponButton: UIButton!
     @IBOutlet weak var idTextField: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
@@ -28,20 +25,22 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.pickWeaponButton.layer.cornerRadius = 10
         self.okButton.layer.cornerRadius = 10
         saveTextField()
-        
     }
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
     
+    //MARK: - TextField UserDefaults
     func saveTextField(){
-        guard let text = UserDefaults.standard.string(forKey: "Text") else { return }
+        guard let text = UserDefaults.standard.string(forKey: textFieldKey) else { return }
         idTextField.text = text
     }
     
-    func getRequst(withSteamId steamId: String, forIndex index: Int, complitionHandler:@escaping (StatsCS) -> Void){
+    //MARK:- Networking
+    func getRequest(withSteamId steamId: String, forIndex index: Int, complitionHandler:@escaping (StatsCS) -> Void){
         let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=a216fc00-32ca-4827-ad36-2725ca0831da"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
@@ -67,16 +66,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return nil
     }
     
-    
+    //MARK:- Steam id TextField
     @IBAction func steamIDTextField(_ sender: UITextField) {
         guard sender.text != nil else { return }
-        UserDefaults.standard.set(sender.text!, forKey: "Text")
+        UserDefaults.standard.set(sender.text!, forKey: textFieldKey)
     }
     
-    
-    @IBAction func Button(_ sender: UIButton) {
+    //MARK: - OK Button
+    @IBAction func okButton(_ sender: UIButton) {
         idSteam = idTextField.text
-        getRequst(withSteamId: idSteam ?? "", forIndex: indexRow ){StatsCS in
+        getRequest(withSteamId: idSteam ?? "", forIndex: indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
             let urrlSession = URLSession.shared
@@ -87,7 +86,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }.resume()
-            
             DispatchQueue.main.async {
                 self.nameLabel.text = StatsCS.name
                 self.kilsLabel.text = String(StatsCS.value)
