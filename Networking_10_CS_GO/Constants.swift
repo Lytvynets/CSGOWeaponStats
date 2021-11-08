@@ -9,8 +9,7 @@
 import Foundation
 
 var idSteam: String?
-
-// var textId: String?
+var textId: String?
 var textFieldKey = "Text"
 
 var indexRow = 0
