@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var shotFired: UILabel!
     @IBOutlet weak var shotHit: UILabel!
     
+    var networkManager = NetworkManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.idTextField.delegate = self
@@ -39,32 +41,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
         idTextField.text = text
     }
     
-    //MARK:- Networking
-    func getRequest(withSteamId steamId: String, forIndex index: Int, complitionHandler:@escaping (StatsCS) -> Void){
-        let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=a216fc00-32ca-4827-ad36-2725ca0831da"
-        guard let url = URL(string: urlString) else { return }
-        let session = URLSession(configuration: .default)
-        session.dataTask(with: url) { (data, response, error) in
-            if let data = data{
-                if let statsCS = self.parseJson(forIndex: index, withData: data){
-                    complitionHandler(statsCS)
-                }
-            }
-        }.resume()
-    }
-    
-    
-    func parseJson(forIndex index: Int,  withData data: Data) -> StatsCS? {
-        let decoder = JSONDecoder()
-        do {
-            let statsCSData = try decoder.decode(ModelCS.self, from: data)
-            guard let statsCS = StatsCS(CSGOStats: statsCSData, index: index) else { return nil }
-            return statsCS
-        } catch {
-            print(error)
-        }
-        return nil
-    }
     
     //MARK:- Steam id TextField
     @IBAction func steamIDTextField(_ sender: UITextField) {
@@ -75,7 +51,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //MARK: - OK Button
     @IBAction func okButton(_ sender: UIButton) {
         idSteam = idTextField.text
-        getRequest(withSteamId: idSteam ?? "", forIndex: indexRow ){StatsCS in
+        networkManager.getRequest(withSteamId: idSteam ?? "", forIndex: indexRow ){StatsCS in
             let image = StatsCS.imageURL
             guard let imageUrl = URL(string: image) else { return }
             let urrlSession = URLSession.shared

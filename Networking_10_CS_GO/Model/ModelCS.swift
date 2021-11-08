@@ -23,24 +23,33 @@ struct Datum: Codable {
     let type: TypeEnum
     let attributes: Attributes
     let metadata: DatumMetadata
-   // let expiryDate: ExpiryDate
+  //  let expiryDate: ExpiryDate
     let stats: Stats
 }
 
 // MARK: - Attributes
 struct Attributes: Codable {
     let key: String
+    let categoryKey: CategoryKey
 }
 
-//enum ExpiryDate: String, Codable {
-//    case the20210116T01221783576790000 = "2021-01-16T01:22:17.8357679+00:00"
-//}
+enum CategoryKey: String, Codable {
+    case gear = "gear"
+    case heavy = "heavy"
+    case pistol = "pistol"
+    case rifle = "rifle"
+    case smg = "smg"
+}
+
+enum ExpiryDate: String, Codable {
+    case the20211108T01083809797670000 = "2021-11-08T01:08:38.0979767+00:00"
+}
 
 // MARK: - DatumMetadata
 struct DatumMetadata: Codable {
     let name: String
     let imageURL: String
-    let category: CategoryClass
+    let category: MetadataCategory
 
     enum CodingKeys: String, CodingKey {
         case name
@@ -49,26 +58,12 @@ struct DatumMetadata: Codable {
     }
 }
 
-// MARK: - CategoryClass
-struct CategoryClass: Codable {
-    let value: Value
-    let displayValue: DisplayValue
-}
-
-enum DisplayValue: String, Codable {
+enum MetadataCategory: String, Codable {
     case gear = "Gear"
     case heavy = "Heavy"
     case pistol = "Pistol"
     case rifle = "Rifle"
     case smg = "SMG"
-}
-
-enum Value: String, Codable {
-    case gear = "gear"
-    case heavy = "heavy"
-    case pistol = "pistol"
-    case rifle = "rifle"
-    case smg = "smg"
 }
 
 // MARK: - Stats
@@ -78,17 +73,18 @@ struct Stats: Codable {
 
 // MARK: - Kills
 struct Kills: Codable {
-    let rank, percentile: JSONNull?
+    let rank: JSONNull?
+    let percentile: Double?
     let displayName: DisplayName
     let displayCategory: DisplayCategory
-    let category: CategoryEnum
+    let category: KillsCategory
     let metadata: KillsMetadata
     let value: Double
     let displayValue: String
     let displayType: DisplayType
 }
 
-enum CategoryEnum: String, Codable {
+enum KillsCategory: String, Codable {
     case combat = "combat"
 }
 
@@ -105,7 +101,7 @@ enum DisplayName: String, Codable {
 
 enum DisplayType: String, Codable {
     case number = "Number"
-    case numberPrecision2 = "NumberPrecision2"
+    case numberPercentage = "NumberPercentage"
 }
 
 // MARK: - KillsMetadata
@@ -118,7 +114,7 @@ enum TypeEnum: String, Codable {
 
 // MARK: - Encode/decode helpers
 
-class JSONNull: Codable {
+class JSONNull: Codable, Hashable {
 
     public static func == (lhs: JSONNull, rhs: JSONNull) -> Bool {
         return true

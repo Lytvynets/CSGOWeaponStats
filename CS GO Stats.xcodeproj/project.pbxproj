@@ -14,6 +14,7 @@
 		E30252ED25B107590053318B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E30252EC25B107590053318B /* Assets.xcassets */; };
 		E30252F025B107590053318B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E30252EE25B107590053318B /* LaunchScreen.storyboard */; };
 		E30252F825B2608A0053318B /* ModelCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30252F725B2608A0053318B /* ModelCS.swift */; };
+		E37D4C562738B55200B1B9EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D4C552738B55100B1B9EE /* NetworkManager.swift */; };
 		E38C42F625B2E7150013F4F4 /* CsGOStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C42F525B2E7150013F4F4 /* CsGOStats.swift */; };
 		E3D02B15260B2DC800C86CD8 /* WeaponTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */; };
 		E3E4CD61260DC0DA0097B5D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E4CD60260DC0D90097B5D4 /* Constants.swift */; };
@@ -29,6 +30,7 @@
 		E30252EF25B107590053318B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E30252F125B107590053318B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E30252F725B2608A0053318B /* ModelCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCS.swift; sourceTree = "<group>"; };
+		E37D4C552738B55100B1B9EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E38C42F525B2E7150013F4F4 /* CsGOStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsGOStats.swift; sourceTree = "<group>"; };
 		E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTableViewController.swift; sourceTree = "<group>"; };
 		E3E4CD60260DC0D90097B5D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				E30252E325B107550053318B /* AppDelegate.swift */,
 				E30252E525B107550053318B /* SceneDelegate.swift */,
 				E3E4CD60260DC0D90097B5D4 /* Constants.swift */,
+				E37D4C552738B55100B1B9EE /* NetworkManager.swift */,
 				E3E4CD5B260DBEFA0097B5D4 /* Model */,
 				E3E4CD5C260DBF210097B5D4 /* View */,
 				E3E4CD5D260DBF370097B5D4 /* Controller */,
@@ -178,6 +181,7 @@
 				E3D02B15260B2DC800C86CD8 /* WeaponTableViewController.swift in Sources */,
 				E30252E425B107550053318B /* AppDelegate.swift in Sources */,
 				E30252E625B107550053318B /* SceneDelegate.swift in Sources */,
+				E37D4C562738B55200B1B9EE /* NetworkManager.swift in Sources */,
 				E3E4CD61260DC0DA0097B5D4 /* Constants.swift in Sources */,
 				E38C42F625B2E7150013F4F4 /* CsGOStats.swift in Sources */,
 				E30252F825B2608A0053318B /* ModelCS.swift in Sources */,
