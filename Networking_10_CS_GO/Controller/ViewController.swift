@@ -18,7 +18,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var shotFired: UILabel!
     @IBOutlet weak var shotHit: UILabel!
+    @IBOutlet weak var settingsView: UIView!
+    @IBOutlet weak var settingsButton: UIButton!
     
+    var idArray = [String]()
     var networkManager = NetworkManager()
     
     override func viewDidLoad() {
@@ -26,6 +29,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         self.idTextField.delegate = self
         self.pickWeaponButton.layer.cornerRadius = 10
         self.okButton.layer.cornerRadius = 10
+        self.settingsView.isHidden = true
         saveTextField()
     }
     
@@ -33,6 +37,37 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    
+    @IBAction func addSteamIDButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Steam ID", message: nil, preferredStyle: .alert)
+        let addSteamID = UIAlertAction(title: "Add", style: .default) { (_) in
+            guard let textField = alert.textFields?.first else { return }
+            self.idArray.append(textField.text ?? "")
+            print("Text field: \(textField.text ?? "")")
+        }
+        alert.addAction(addSteamID)
+        alert.addTextField(configurationHandler: nil)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func closeSettings(_ sender: UIButton) {
+        self.settingsView.isHidden = true
+        self.settingsButton.isHidden = false
+    }
+    
+    @IBAction func settingsButtonAction(_ sender: UIButton) {
+        self.settingsView.isHidden = false
+        self.settingsButton.isHidden = true
+        
+    }
+    
+    
+    @IBAction func pickSteamID(_ sender: UIButton) {
+        self.idTextField.text = "thepsih13"
+        print("\(String(describing: self.idArray.first))")
     }
     
     //MARK: - TextField UserDefaults
@@ -70,5 +105,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.shotHit.text = String(StatsCS.shotsHit)
             }
         }
+        
     }
 }

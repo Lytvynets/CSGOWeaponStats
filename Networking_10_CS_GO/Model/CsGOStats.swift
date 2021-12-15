@@ -16,7 +16,7 @@ class StatsCS: Codable{
     let shotsFired: Int
     let shotsHit: Int
     
-    var index: Int
+    var index: Int 
     
     init?(CSGOStats: ModelCS, index: Int){
         name = CSGOStats.data[index].metadata.name as String
