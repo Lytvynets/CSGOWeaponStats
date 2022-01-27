@@ -23,7 +23,7 @@ struct Datum: Codable {
     let type: TypeEnum
     let attributes: Attributes
     let metadata: DatumMetadata
-  //  let expiryDate: ExpiryDate
+  //let expiryDate: ExpiryDate
     let stats: Stats
 }
 

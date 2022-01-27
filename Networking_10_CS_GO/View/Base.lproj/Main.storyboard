@@ -203,7 +203,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="repeat" catalog="system" title=" "/>
                                 <connections>
                                     <action selector="pickSteamID:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jnd-Dk-p08"/>
-                                    <segue destination="4JG-NQ-DLg" kind="show" id="pfH-BV-F2P"/>
+                                    <segue destination="4JG-NQ-DLg" kind="show" identifier="ViewController" id="pfH-BV-F2P"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -932,6 +932,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="sectionIndexBackgroundColor" red="0.21210116300000001" green="0.21210116300000001" blue="0.21210116300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="5Rc-BJ-AGf" customClass="SteamIdCell" customModule="CS_GO_Stats" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
@@ -940,15 +941,21 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-kB-pct">
-                                            <rect key="frame" x="101" y="11" width="42" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="id" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLC-kB-pct">
+                                            <rect key="frame" x="200" y="11" width="14" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" systemColor="secondarySystemBackgroundColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.21210116300000001" green="0.21210116300000001" blue="0.21210116300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstItem="OLC-kB-pct" firstAttribute="leading" secondItem="5cS-EH-u8g" secondAttribute="leading" constant="200" id="I2t-QB-BOc"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OLC-kB-pct" secondAttribute="trailing" id="olR-Dx-wbq"/>
+                                        <constraint firstItem="OLC-kB-pct" firstAttribute="top" secondItem="5cS-EH-u8g" secondAttribute="top" constant="11" id="zYm-pa-A50"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.21210116300000001" green="0.21210116300000001" blue="0.21210116300000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="iD" destination="OLC-kB-pct" id="i0P-WB-Y9Y"/>
                                 </connections>
@@ -963,52 +970,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vh2-uB-9To" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-690" y="777"/>
-        </scene>
-        <!--Table SteamID-->
-        <scene sceneID="jBa-j6-NsO">
-            <objects>
-                <viewController id="43z-8t-akT" customClass="TableSteamID" customModule="CS_GO_Stats" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="U07-rY-NsG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pBk-eT-Nvf">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ei5-S6-csb" customClass="SteamIdCell" customModule="CS_GO_Stats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ei5-S6-csb" id="vvS-88-uKm">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="43z-8t-akT" id="Nro-2f-jHc"/>
-                                    <outlet property="delegate" destination="43z-8t-akT" id="DQr-W5-lt3"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="1F7-In-6dU"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="1F7-In-6dU" firstAttribute="trailing" secondItem="pBk-eT-Nvf" secondAttribute="trailing" id="a4g-Yy-6o7"/>
-                            <constraint firstItem="pBk-eT-Nvf" firstAttribute="top" secondItem="1F7-In-6dU" secondAttribute="top" id="alD-Gi-I5U"/>
-                            <constraint firstItem="1F7-In-6dU" firstAttribute="bottom" secondItem="pBk-eT-Nvf" secondAttribute="bottom" id="hJ4-o6-7oV"/>
-                            <constraint firstItem="pBk-eT-Nvf" firstAttribute="leading" secondItem="1F7-In-6dU" secondAttribute="leading" id="vz2-fI-Jzp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="o95-ne-M6j"/>
-                    <connections>
-                        <outlet property="SteamtableView" destination="pBk-eT-Nvf" id="jgl-8l-VO0"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7Zn-0C-zLA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="877" y="816"/>
+            <point key="canvasLocation" x="138" y="787"/>
         </scene>
     </scenes>
     <resources>

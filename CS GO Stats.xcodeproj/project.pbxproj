@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B6C9FE3ABD3FB8EDE6F35976 /* Pods_CS_GO_Stats.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2341BBF8955C319BB2BD8CDA /* Pods_CS_GO_Stats.framework */; };
 		E30252E425B107550053318B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30252E325B107550053318B /* AppDelegate.swift */; };
 		E30252E625B107550053318B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30252E525B107550053318B /* SceneDelegate.swift */; };
 		E30252E825B107550053318B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30252E725B107550053318B /* ViewController.swift */; };
@@ -16,14 +17,17 @@
 		E30252F825B2608A0053318B /* ModelCS.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30252F725B2608A0053318B /* ModelCS.swift */; };
 		E36339862769255600500AED /* SteamIdCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E36339852769255600500AED /* SteamIdCell.swift */; };
 		E37D4C562738B55200B1B9EE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37D4C552738B55100B1B9EE /* NetworkManager.swift */; };
+		E37EF5A5276A2D0900AB7D0A /* ModelSteamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E37EF5A4276A2D0900AB7D0A /* ModelSteamID.swift */; };
 		E38C42F625B2E7150013F4F4 /* CsGOStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38C42F525B2E7150013F4F4 /* CsGOStats.swift */; };
-		E397BD2A2768E0C60095EDD2 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397BD292768E0C60095EDD2 /* Settings.swift */; };
 		E397BD2C276911830095EDD2 /* TableSteamID.swift in Sources */ = {isa = PBXBuildFile; fileRef = E397BD2B276911830095EDD2 /* TableSteamID.swift */; };
 		E3D02B15260B2DC800C86CD8 /* WeaponTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */; };
 		E3E4CD61260DC0DA0097B5D4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E4CD60260DC0D90097B5D4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2341BBF8955C319BB2BD8CDA /* Pods_CS_GO_Stats.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CS_GO_Stats.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4D8B8EA907B439594506698 /* Pods-CS GO Stats.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS GO Stats.debug.xcconfig"; path = "Target Support Files/Pods-CS GO Stats/Pods-CS GO Stats.debug.xcconfig"; sourceTree = "<group>"; };
+		C77DDE900C9A71AB441FD201 /* Pods-CS GO Stats.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CS GO Stats.release.xcconfig"; path = "Target Support Files/Pods-CS GO Stats/Pods-CS GO Stats.release.xcconfig"; sourceTree = "<group>"; };
 		E30252E025B107550053318B /* CS GO Stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS GO Stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E30252E325B107550053318B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E30252E525B107550053318B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,8 +39,8 @@
 		E30252F725B2608A0053318B /* ModelCS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelCS.swift; sourceTree = "<group>"; };
 		E36339852769255600500AED /* SteamIdCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SteamIdCell.swift; sourceTree = "<group>"; };
 		E37D4C552738B55100B1B9EE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E37EF5A4276A2D0900AB7D0A /* ModelSteamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSteamID.swift; sourceTree = "<group>"; };
 		E38C42F525B2E7150013F4F4 /* CsGOStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CsGOStats.swift; sourceTree = "<group>"; };
-		E397BD292768E0C60095EDD2 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		E397BD2B276911830095EDD2 /* TableSteamID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableSteamID.swift; sourceTree = "<group>"; };
 		E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeaponTableViewController.swift; sourceTree = "<group>"; };
 		E3E4CD60260DC0D90097B5D4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -47,17 +51,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6C9FE3ABD3FB8EDE6F35976 /* Pods_CS_GO_Stats.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E0CC266209282E879FF790F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4D8B8EA907B439594506698 /* Pods-CS GO Stats.debug.xcconfig */,
+				C77DDE900C9A71AB441FD201 /* Pods-CS GO Stats.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		33628FD00A6DC5E9E2D4E991 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2341BBF8955C319BB2BD8CDA /* Pods_CS_GO_Stats.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E30252D725B107550053318B = {
 			isa = PBXGroup;
 			children = (
 				E30252E225B107550053318B /* Networking_10_CS_GO */,
 				E30252E125B107550053318B /* Products */,
+				0E0CC266209282E879FF790F /* Pods */,
+				33628FD00A6DC5E9E2D4E991 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +116,7 @@
 				E30252F725B2608A0053318B /* ModelCS.swift */,
 				E38C42F525B2E7150013F4F4 /* CsGOStats.swift */,
 				E36339852769255600500AED /* SteamIdCell.swift */,
+				E37EF5A4276A2D0900AB7D0A /* ModelSteamID.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,9 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				E30252E725B107550053318B /* ViewController.swift */,
-				E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */,
 				E397BD2B276911830095EDD2 /* TableSteamID.swift */,
-				E397BD292768E0C60095EDD2 /* Settings.swift */,
+				E3D02B14260B2DC800C86CD8 /* WeaponTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -122,9 +146,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E30252F425B107590053318B /* Build configuration list for PBXNativeTarget "CS GO Stats" */;
 			buildPhases = (
+				67209B72CAB828637E743042 /* [CP] Check Pods Manifest.lock */,
 				E30252DC25B107550053318B /* Sources */,
 				E30252DD25B107550053318B /* Frameworks */,
 				E30252DE25B107550053318B /* Resources */,
+				2DD21072F8DF6ECA8941216B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,19 +207,61 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2DD21072F8DF6ECA8941216B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS GO Stats/Pods-CS GO Stats-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CS GO Stats/Pods-CS GO Stats-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CS GO Stats/Pods-CS GO Stats-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		67209B72CAB828637E743042 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CS GO Stats-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E30252DC25B107550053318B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E36339862769255600500AED /* SteamIdCell.swift in Sources */,
+				E37EF5A5276A2D0900AB7D0A /* ModelSteamID.swift in Sources */,
 				E30252E825B107550053318B /* ViewController.swift in Sources */,
 				E3D02B15260B2DC800C86CD8 /* WeaponTableViewController.swift in Sources */,
 				E30252E425B107550053318B /* AppDelegate.swift in Sources */,
 				E30252E625B107550053318B /* SceneDelegate.swift in Sources */,
 				E37D4C562738B55200B1B9EE /* NetworkManager.swift in Sources */,
 				E3E4CD61260DC0DA0097B5D4 /* Constants.swift in Sources */,
-				E397BD2A2768E0C60095EDD2 /* Settings.swift in Sources */,
 				E38C42F625B2E7150013F4F4 /* CsGOStats.swift in Sources */,
 				E397BD2C276911830095EDD2 /* TableSteamID.swift in Sources */,
 				E30252F825B2608A0053318B /* ModelCS.swift in Sources */,
@@ -340,6 +408,7 @@
 		};
 		E30252F525B107590053318B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4D8B8EA907B439594506698 /* Pods-CS GO Stats.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -359,6 +428,7 @@
 		};
 		E30252F625B107590053318B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C77DDE900C9A71AB441FD201 /* Pods-CS GO Stats.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
