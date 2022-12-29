@@ -11,7 +11,7 @@ import Foundation
 class NetworkManager {
     //MARK:- Networking
     func getRequest(withSteamId steamId: String, forIndex index: Int, complitionHandler:@escaping (StatsCS) -> Void){
-        let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=a216fc00-32ca-4827-ad36-2725ca0831da"
+        let urlString = "https://public-api.tracker.gg/v2/csgo/standard/profile/steam/\(steamId)/segments/weapon/?TRN-Api-Key=youApiKey"
         guard let url = URL(string: urlString) else { return }
         let session = URLSession(configuration: .default)
         session.dataTask(with: url) { (data, response, error) in
