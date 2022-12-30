@@ -1,3 +1,4 @@
+![image](https://raw.githubusercontent.com/Lytvynets/TestTaskApp/main/images/100%202.png)
 # CS:GO Weapon stats
 This app shows the player's weapon stats in Counter-Strike Global Offensive
 
