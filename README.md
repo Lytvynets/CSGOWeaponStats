@@ -12,5 +12,5 @@ No user data is collected, stored, or shared. Software preferences such as user 
 If you have any questions, please email 
 
 # Contact Support    
-vladlytvynets7@gmail.com  
-https://t.me/ThePsih13 
+Email: vladlytvynets7@gmail.com  
+Telegram: https://t.me/ThePsih13 
