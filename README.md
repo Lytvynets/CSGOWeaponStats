@@ -1,5 +1,5 @@
 
-# ![image](https://raw.githubusercontent.com/Lytvynets/TestTaskApp/main/images/100%202.png) Weapon stats
+# ![image](https://raw.githubusercontent.com/Lytvynets/TestTaskApp/main/images/weaponStats72.png) Weapon stats
 This app shows the player's weapon stats in Counter-Strike Global Offensive
 # Description
 - The data parses with Steam ID.
